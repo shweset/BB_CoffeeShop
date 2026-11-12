@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Events and Workshops</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="eventsBody">
+    <!-- Navigation bar -->
+    <nav class="siteNav">
+      <div class="navBar">
+        <div class="logo">
+          <a href="home.html">
+            <img class="brandLogo" src="images/logo.png" alt="" width="42" height="42">
+            Bean Boutique
+          </a>
+        </div>
+        <button class="menuToggle" type="button" onclick="toggleMenu()" aria-controls="navMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <ul class="menu" id="navMenu">
+          <li>
+            <a href="home.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="coffee.html"
+              ><i class="fa-solid fa-mug-hot"></i> Coffee Selection</a
+            >
+          </li>
+          <li>
+            <a href="equipment.html"
+              ><i class="fa-solid fa-gears"></i> Brewing Equipment</a
+            >
+          </li>
+          <!-- Events dropdown -->
+          <li class="dropdown">
+            <button
+              class="eventsDropdownBtn dropdown-toggle active"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            aria-current="page">
+              <i class="fa-solid fa-calendar-days"></i> Events and Workshops
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="events.html#upcomingEvents"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#workshops"
+                  >Coffee Workshops</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#lessons"
+                  >Coffee Lessons</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="offers.html"
+              ><i class="fa-solid fa-tags"></i> Offers and Subscriptions</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Cart <span id="cartCount" class="badge rounded-pill text-bg-dark ms-1" hidden></span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Events and workshops -->
+    <div class="eventsPage">
+      <div class="eventsHeading">
+        <h1 id="eventsTitle">Upcoming Events</h1>
+        <p>Join our coffee events, practical workshops and beginner lessons.</p>
+      </div>
+
+      <!-- Session categories -->
+      <div class="nav nav-pills d-none" role="tablist">
+        <button
+          class="nav-link active"
+          id="upcomingEventsTab"
+          data-bs-toggle="pill"
+          data-bs-target="#upcomingEvents"
+          type="button"
+          role="tab"
+          aria-controls="upcomingEvents"
+          aria-selected="true"
+        >Events</button>
+        <button
+          class="nav-link"
+          id="workshopsTab"
+          data-bs-toggle="pill"
+          data-bs-target="#workshops"
+          type="button"
+          role="tab"
+          aria-controls="workshops"
+          aria-selected="false"
+        >Workshops</button>
+        <button
+          class="nav-link"
+          id="lessonsTab"
+          data-bs-toggle="pill"
+          data-bs-target="#lessons"
+          type="button"
+          role="tab"
+          aria-controls="lessons"
+          aria-selected="false"
+        >Lessons</button>
+      </div>
+
+      <div class="tab-content">
+        <div class="eventSection tab-pane fade show active" id="upcomingEvents" role="tabpanel" aria-labelledby="upcomingEventsTab" tabindex="0">
+          <div class="card eventCard">
+            <img class="eventImage" src="images/events/MICE-2.jpg" alt="People attending a coffee event">
+            <div class="card-body">
+              <h2>Coffee Tasting Meetup</h2>
+              <p>Explore different coffees and share your favourite flavours with other coffee lovers.</p>
+              <p><strong>Date:</strong> 24 October 2026</p>
+              <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+              <p><strong>Fee:</strong> ฿300 per person</p>
+              <a class="eventButton" href="#eventRegistration">Register</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="eventSection tab-pane fade" id="workshops" role="tabpanel" aria-labelledby="workshopsTab" tabindex="0">
+          <div class="card eventCard">
+            <img class="eventImage" src="images/events/pour-over-intensive-workshop-class-Cropped-2-scaled.jpg" alt="Participants practising pour-over brewing">
+            <div class="card-body">
+              <h2>Pour-over Brewing Workshop</h2>
+              <p>Practise preparing pour-over coffee with guidance from our team. Suitable for beginners.</p>
+              <p><strong>Date:</strong> 31 October 2026</p>
+              <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+              <p><strong>Fee:</strong> ฿800 per person</p>
+              <a class="eventButton" href="#eventRegistration">Register</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="eventSection tab-pane fade" id="lessons" role="tabpanel" aria-labelledby="lessonsTab" tabindex="0">
+          <div class="card eventCard">
+            <img class="eventImage" src="images/events/156_Screenshot%202024-01-10%20at%2010.49.51%20PM.png" alt="A group taking part in a coffee class">
+            <div class="card-body">
+              <h2>Introduction to Coffee</h2>
+              <p>Learn about coffee beans, brewing tools and different ways to prepare coffee at home.</p>
+              <p><strong>Date:</strong> 7 November 2026</p>
+              <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+              <p><strong>Fee:</strong> ฿600 per person</p>
+              <a class="eventButton" href="#eventRegistration">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eventRegistration" id="eventRegistration">
+        <h2>Register for a Session</h2>
+        <p>Choose your session and enter your details below.</p>
+        <form action="mailto:hello@beanboutique.example" method="post" enctype="text/plain">
+          <div class="registrationRow">
+            <div class="registrationField">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="First Name" autocomplete="given-name" required>
+            </div>
+            <div class="registrationField">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="Last Name" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="registrationField">
+            <label for="registrationEmail">Email</label>
+            <input type="email" id="registrationEmail" name="Email" autocomplete="email" required>
+          </div>
+          <div class="registrationField">
+            <label for="session">Session</label>
+            <select id="session" name="Session" required>
+              <option value="">Select a session</option>
+              <option value="Coffee Tasting Meetup">Coffee Tasting Meetup</option>
+              <option value="Pour-over Brewing Workshop">Pour-over Brewing Workshop</option>
+              <option value="Introduction to Coffee">Introduction to Coffee</option>
+            </select>
+          </div>
+          <button type="submit" class="eventButton">Register by Email</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContent">
+        <div class="footerColumn">
+          <h2>About Us</h2>
+          <p>Bean Boutique offers unique coffee beans, brewing equipment, and workshops for coffee lovers.</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Menu</h2>
+          <a href="home.html">Home</a>
+          <a href="coffee.html">Coffee Selection</a>
+          <a href="equipment.html">Brewing Equipment</a>
+          <a href="events.html">Events and Workshops</a>
+          <a href="offers.html">Offers and Subscriptions</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <div class="footerColumn">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 1204/3, Unit B, Song Wat
+            Road, Chakkrawat, Samphanthawong, Bangkok 10100, Thailand
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +66 00 000 0000</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.example</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Opening Hours</h2>
+          <p>Open Every Day</p>
+          <p>Monday-Friday<br>9:00 AM-8:00 PM</p>
+          <p>Saturday-Sunday<br>9:00 AM-9:00 PM</p>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2026 Bean Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/events.js"></script>
+  </body>
+</html>

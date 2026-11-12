@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Coffee Selection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="siteNav">
+      <div class="navBar">
+        <div class="logo">
+          <a href="home.html">
+            <img class="brandLogo" src="images/logo.png" alt="" width="42" height="42">
+            Bean Boutique
+          </a>
+        </div>
+        <button class="menuToggle" type="button" onclick="toggleMenu()" aria-controls="navMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <ul class="menu" id="navMenu">
+          <li>
+            <a href="home.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="coffee.html"
+               class="active" aria-current="page"><i class="fa-solid fa-mug-hot"></i> Coffee Selection</a
+            >
+          </li>
+          <li>
+            <a href="equipment.html"
+              ><i class="fa-solid fa-gears"></i> Brewing Equipment</a
+            >
+          </li>
+          <!-- Events dropdown -->
+          <li class="dropdown">
+            <button
+              class="eventsDropdownBtn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-calendar-days"></i> Events and Workshops
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="events.html#upcomingEvents"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#workshops"
+                  >Coffee Workshops</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#lessons"
+                  >Coffee Lessons</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="offers.html"
+              ><i class="fa-solid fa-tags"></i> Offers and Subscriptions</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Cart <span id="cartCount" class="badge rounded-pill text-bg-dark ms-1" hidden></span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Coffee catalogue -->
+    <div class="coffeeSection">
+      <div class="coffeeHeading">
+        <h1>Our Coffee Selection</h1>
+        <p>Explore our coffee beans and find your favourite flavour.</p>
+      </div>
+      <div class="coffeeSearch">
+        <label for="coffeeSearch">Find your coffee</label>
+        <input type="search" id="coffeeSearch" placeholder="Search coffee..." oninput="filterItems()">
+      </div>
+      <p id="coffeeSearchMessage" class="coffeeSearchMessage" role="status"></p>
+      <p id="cartMessage" class="coffeeSearchMessage" role="status"></p>
+      <div class="row g-4">
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-marcello-sokal-62573206-8555524.jpg" data-lightbox="coffee-selection" data-title="House Blend">
+              <img class="card-img-top" src="images/coffee/pexels-marcello-sokal-62573206-8555524.jpg" alt="Roasted coffee beans">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">House Blend</h2>
+              <p>A balanced blend for your everyday cup.</p>
+              <p><strong>Tasting notes:</strong> Chocolate and nuts</p>
+              <p><strong>Brewing:</strong> French press</p>
+              <p class="coffeePrice">฿350 / 250g</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('House Blend', 350)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-marek-kupiec-1696944-9892391.jpg" data-lightbox="coffee-selection" data-title="Morning Blend">
+              <img class="card-img-top" src="images/coffee/pexels-marek-kupiec-1696944-9892391.jpg" alt="Close-up of brown coffee beans">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">Morning Blend</h2>
+              <p>A smooth coffee to enjoy at the start of your day.</p>
+              <p><strong>Tasting notes:</strong> Caramel and nuts</p>
+              <p><strong>Brewing:</strong> Pour-over</p>
+              <p class="coffeePrice">฿380 / 250g</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('Morning Blend', 380)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-nicky-7859464.jpg" data-lightbox="coffee-selection" data-title="Espresso Blend">
+              <img class="card-img-top" src="images/coffee/pexels-nicky-7859464.jpg" alt="Dark roasted coffee beans">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">Espresso Blend</h2>
+              <p>A rich blend for espresso and milk-based coffee.</p>
+              <p><strong>Tasting notes:</strong> Dark chocolate and caramel</p>
+              <p><strong>Brewing:</strong> Espresso machine</p>
+              <p class="coffeePrice">฿400 / 250g</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('Espresso Blend', 400)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-cottonbro-4829069.jpg" data-lightbox="coffee-selection" data-title="Guatemala and Colombia Set">
+              <img class="card-img-top" src="images/coffee/pexels-cottonbro-4829069.jpg" alt="Sibaristica Guatemala and Colombia coffee bags">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">Guatemala and Colombia Set</h2>
+              <p>Explore two coffees with this packaged selection.</p>
+              <p><strong>Tasting notes:</strong> Chocolate and fruit</p>
+              <p><strong>Brewing:</strong> Pour-over</p>
+              <p class="coffeePrice">฿850 / 2 bags</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('Guatemala and Colombia Set', 850)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-cottonbro-4829072.jpg" data-lightbox="coffee-selection" data-title="Ethiopia Selection">
+              <img class="card-img-top" src="images/coffee/pexels-cottonbro-4829072.jpg" alt="The Living Room Ethiopia coffee bag">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">Ethiopia Selection</h2>
+              <p>A packaged coffee selection for your home brewing.</p>
+              <p><strong>Tasting notes:</strong> Floral and citrus</p>
+              <p><strong>Brewing:</strong> Pour-over</p>
+              <p class="coffeePrice">฿450 / bag</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('Ethiopia Selection', 450)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card coffeeCard h-100">
+            <a href="images/coffee/pexels-willian-alves-254412482-14751086.jpg" data-lightbox="coffee-selection" data-title="Brazil Coffee Selection">
+              <img class="card-img-top" src="images/coffee/pexels-willian-alves-254412482-14751086.jpg" alt="Flora Alba Brazilian coffee bags">
+            </a>
+            <div class="card-body">
+              <h2 class="card-title">Brazil Coffee Selection</h2>
+              <p>Discover a different coffee from our packaged range.</p>
+              <p><strong>Tasting notes:</strong> Nuts and chocolate</p>
+              <p><strong>Brewing:</strong> French press</p>
+              <p class="coffeePrice">฿420 / bag</p>
+              <button type="button" class="coffeeButton" onclick="addToCart('Brazil Coffee Selection', 420)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContent">
+        <div class="footerColumn">
+          <h2>About Us</h2>
+          <p>Bean Boutique offers unique coffee beans, brewing equipment, and workshops for coffee lovers.</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Menu</h2>
+          <a href="home.html">Home</a>
+          <a href="coffee.html">Coffee Selection</a>
+          <a href="equipment.html">Brewing Equipment</a>
+          <a href="events.html">Events and Workshops</a>
+          <a href="offers.html">Offers and Subscriptions</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <div class="footerColumn">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 1204/3, Unit B, Song Wat
+            Road, Chakkrawat, Samphanthawong, Bangkok 10100, Thailand
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +66 00 000 0000</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.example</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Opening Hours</h2>
+          <p>Open Every Day</p>
+          <p>Monday-Friday<br>9:00 AM-8:00 PM</p>
+          <p>Saturday-Sunday<br>9:00 AM-9:00 PM</p>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2026 Bean Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/coffee.js"></script>
+  </body>
+</html>

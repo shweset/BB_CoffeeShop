@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="siteNav">
+      <div class="navBar">
+        <div class="logo">
+          <a href="home.html">
+            <img class="brandLogo" src="images/logo.png" alt="" width="42" height="42">
+            Bean Boutique
+          </a>
+        </div>
+        <button class="menuToggle" type="button" onclick="toggleMenu()" aria-controls="navMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <ul class="menu" id="navMenu">
+          <li>
+            <a href="home.html"
+               class="active" aria-current="page"><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="coffee.html"
+              ><i class="fa-solid fa-mug-hot"></i> Coffee Selection</a
+            >
+          </li>
+          <li>
+            <a href="equipment.html"
+              ><i class="fa-solid fa-gears"></i> Brewing Equipment</a
+            >
+          </li>
+          <!-- Events dropdown -->
+          <li class="dropdown">
+            <button
+              class="eventsDropdownBtn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-calendar-days"></i> Events and Workshops
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="events.html#upcomingEvents"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#workshops"
+                  >Coffee Workshops</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#lessons"
+                  >Coffee Lessons</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="offers.html"
+              ><i class="fa-solid fa-tags"></i> Offers and Subscriptions</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Cart
+              <span
+                id="cartCount"
+                class="badge rounded-pill text-bg-dark ms-1"
+                hidden
+              ></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home slideshow -->
+    <div class="swiper homeSlider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="images/menu/pexels-roearte-253752635-12872904.jpg"
+            alt="Cups of coffee with latte art">
+          <div class="slideText">
+            <h1>Welcome to Bean Boutique</h1>
+            <p>Discover your next favourite coffee.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="images/menu/pexels-arti-16627281.jpg"
+            alt="Coffee grinders and an espresso machine on a cafe counter">
+          <div class="slideText">
+            <h2>Brew Your Way</h2>
+            <p>Explore equipment for your daily coffee.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="images/menu/pexels-masudriguez-31611604.jpg"
+            alt="A coffee brewing demonstration with people watching">
+          <div class="slideText">
+            <h2>Learn and Share</h2>
+            <p>Join our coffee events and workshops.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- About Bean Boutique -->
+    <div class="homeAbout">
+      <div class="aboutImage">
+        <img
+          src="images/menu/pexels-michael-burrows-7125768.jpg"
+          alt="Coffee cups and a glass jug of freshly brewed coffee">
+      </div>
+      <div class="aboutText">
+        <h2>A Place for Coffee Lovers</h2>
+        <p>
+          Bean Boutique brings coffee lovers together through unique blends and
+          single-origin coffee beans. We help you explore different flavours and
+          find coffee for your favourite brewing method.
+        </p>
+        <p>
+          We also sell brewing equipment, from French presses to espresso
+          machines, to help you prepare coffee at home. Our tasting sessions and
+          workshops offer a chance to learn new skills and meet other coffee
+          lovers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Explore Bean Boutique -->
+    <div class="homeFeatures">
+      <h2>Explore Bean Boutique</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card featureCard h-100">
+            <div class="card-body">
+              <i class="fa-solid fa-mug-hot"></i>
+              <h3 class="card-title">Our Coffee</h3>
+              <p class="card-text">
+                Discover unique blends and single-origin coffees.
+              </p>
+              <a href="coffee.html">Explore Coffee</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card featureCard h-100">
+            <div class="card-body">
+              <i class="fa-solid fa-gears"></i>
+              <h3 class="card-title">Brewing Equipment</h3>
+              <p class="card-text">
+                Find tools to make your favourite coffee at home.
+              </p>
+              <a href="equipment.html">View Equipment</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card featureCard h-100">
+            <div class="card-body">
+              <i class="fa-solid fa-calendar-days"></i>
+              <h3 class="card-title">Events and Workshops</h3>
+              <p class="card-text">
+                Learn brewing skills and meet other coffee lovers.
+              </p>
+              <a href="events.html">Discover Events</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="contactSection">
+      <h2 class="contactHeading">Visit or Contact Us</h2>
+      <div class="homeContact">
+        <div class="contactMap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7751.479565563295!2d100.5068955!3d13.734198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299006444e6ff%3A0xc339ad56fa23d4e2!2s%25%20Arabica%20Song%20Wat!5e0!3m2!1smy!2smm!4v1791380403378!5m2!1smy!2smm"
+            title="Map showing the prototype shop location at Arabica Song Wat"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <div class="contactEnquiry">
+          <h3>Send an Enquiry</h3>
+          <p>
+            Ask us about events, workshops, coffee lessons, or business
+            opportunities.
+          </p>
+          <form onsubmit="checkEnquiry(event)">
+            <div class="enquiryField">
+              <label for="enquiryName">Name</label>
+              <input
+                type="text"
+                id="enquiryName"
+                name="name"
+                autocomplete="name"
+                required>
+            </div>
+            <div class="enquiryField">
+              <label for="enquiryEmail">Email</label>
+              <input
+                type="email"
+                id="enquiryEmail"
+                name="email"
+                autocomplete="email"
+                required>
+            </div>
+            <div class="enquiryField">
+              <label for="enquiryType">Enquiry Type</label>
+              <select id="enquiryType" name="enquiryType" required>
+                <option value="">Choose a topic</option>
+                <option value="events">Events</option>
+                <option value="workshops">Coffee Workshops</option>
+                <option value="lessons">Coffee Lessons</option>
+                <option value="business">Business Enquiries</option>
+              </select>
+            </div>
+            <div class="enquiryField">
+              <label for="enquiryMessage">Message</label>
+              <textarea
+                id="enquiryMessage"
+                name="message"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <p class="enquiryStatus" id="enquiryStatus" role="status"></p>
+            <button class="enquiryButton" type="submit">Check Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContent">
+        <div class="footerColumn">
+          <h2>About Us</h2>
+          <p>
+            Bean Boutique offers unique coffee beans, brewing equipment, and
+            workshops for coffee lovers.
+          </p>
+        </div>
+        <div class="footerColumn">
+          <h2>Menu</h2>
+          <a href="home.html">Home</a>
+          <a href="coffee.html">Coffee Selection</a>
+          <a href="equipment.html">Brewing Equipment</a>
+          <a href="events.html">Events and Workshops</a>
+          <a href="offers.html">Offers and Subscriptions</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <div class="footerColumn">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 1204/3, Unit B, Song Wat
+            Road, Chakkrawat, Samphanthawong, Bangkok 10100, Thailand
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +66 00 000 0000</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.example</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Opening Hours</h2>
+          <p>Open Every Day</p>
+          <p>Monday-Friday<br>9:00 AM-8:00 PM</p>
+          <p>Saturday-Sunday<br>9:00 AM-9:00 PM</p>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2026 Bean Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- First-visit offer -->
+    <div
+      class="modal fade"
+      id="offerModal"
+      tabindex="-1"
+      aria-labelledby="offerTitle"
+      aria-hidden="true"
+    
+      role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="offerTitle">
+              Welcome to Bean Boutique
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Get 10% off your first order, including coffee and brewing equipment.</p>
+            <form id="offerForm">
+              <div class="offerField">
+                <label for="offerEmail">Email</label>
+                <input
+                  type="email"
+                  id="offerEmail"
+                  name="email"
+                  autocomplete="email"
+                  required>
+              </div>
+              <button class="offerButton" type="submit">Get My Discount</button>
+            </form>
+            <p class="offerMessage" id="offerMessage" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

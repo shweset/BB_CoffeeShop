@@ -1,0 +1,1336 @@
+/* Shared styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation bar */
+.navBar {
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  position: relative;
+  left: -10px;
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navBar .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 14px;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background-color: black;
+  color: white;
+}
+
+.menu a i {
+  margin-right: 5px;
+}
+
+.brandLogo {
+  object-fit: contain;
+  display: block;
+  width: 52px;
+  height: 52px;
+}
+
+/* Events dropdown button */
+.eventsDropdownBtn {
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.eventsDropdownBtn i {
+  margin-right: 5px;
+}
+
+.eventsDropdownBtn:hover,
+.eventsDropdownBtn:focus-visible,
+.eventsDropdownBtn.show {
+  background-color: black;
+  color: white;
+}
+
+/* Mobile menu button */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.footerContent {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+}
+
+.footerColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.footerColumn h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.footerColumn p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  overflow-wrap: anywhere;
+}
+
+.footerColumn a {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footerColumn a:hover,
+.footerColumn a:focus-visible {
+  text-decoration: underline;
+}
+
+.footerColumn i {
+  margin-right: 8px;
+}
+
+/* Copyright */
+.footerBottom {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #555555;
+  text-align: center;
+}
+
+.footerBottom p {
+  margin: 0;
+}
+
+/* Navbar separator */
+.siteNav {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Cart quantity badge */
+.menu a:hover #cartCount,
+.menu a:focus-visible #cartCount {
+  background-color: white !important;
+  color: black !important;
+}
+
+#cartCount[hidden] {
+  display: none !important;
+}
+
+/* Home page */
+/* Home slideshow */
+.homeSlider {
+  width: 100%;
+  height: 550px;
+}
+
+.homeSlider .swiper-slide {
+  position: relative;
+}
+
+.homeSlider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay makes the text easier to read */
+.homeSlider .swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.slideText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.slideText h1,
+.slideText h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.slideText p {
+  font-size: 20px;
+}
+
+.homeSlider .swiper-button-prev,
+.homeSlider .swiper-button-next {
+  color: white;
+}
+
+.homeSlider .swiper-pagination-bullet {
+  background-color: white;
+}
+
+/* Home about section */
+.homeAbout {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.aboutImage,
+.aboutText {
+  flex: 1;
+  min-width: 0;
+}
+
+.aboutImage img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.aboutText h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.aboutText p {
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.aboutLink {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.aboutLink:hover,
+.aboutLink:focus-visible {
+  background-color: white;
+  color: black;
+}
+
+/* Home feature cards */
+.homeFeatures {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.homeFeatures h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.featureCard {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureCard .card-body {
+  padding: 30px 20px;
+}
+
+.featureCard i {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.featureCard h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.featureCard p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.featureCard a {
+  color: black;
+  font-weight: bold;
+  text-underline-offset: 4px;
+}
+
+/* Map and enquiry section */
+.homeContact {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contactMap,
+.contactEnquiry {
+  flex: 1;
+  min-width: 0;
+}
+
+.homeContact h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.contactMap iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.contactMap a {
+  display: inline-block;
+  margin-top: 15px;
+  color: black;
+}
+
+.contactEnquiry {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contactEnquiry h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contactEnquiry p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.enquiryField {
+  margin-bottom: 10px;
+}
+
+.enquiryField label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.enquiryField input,
+.enquiryField select,
+.enquiryField textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.enquiryField textarea {
+  resize: vertical;
+}
+
+.enquiryNote {
+  font-size: 14px;
+}
+
+.enquiryButton {
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.enquiryButton:hover,
+.enquiryButton:focus-visible {
+  background-color: white;
+  color: black;
+}
+
+.contactSection {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  color: black;
+  padding: 40px 0;
+}
+
+.contactSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/menu/pexels-maksgelatin-4351803.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.contactSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+
+.contactHeading {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+/* Welcome offer popup */
+#offerModal .modal-body {
+  padding: 25px;
+}
+
+.offerField {
+  margin: 20px 0;
+}
+
+.offerField label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.offerField input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #777777;
+  border-radius: 4px;
+}
+
+.offerButton {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.offerButton:hover,
+.offerButton:focus-visible {
+  background-color: white;
+  color: black;
+}
+
+.offerMessage {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* Coffee Selection page */
+/* Coffee catalogue */
+.coffeeSection {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.coffeeHeading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.coffeeHeading h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.coffeeCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.coffeeCard:hover {
+  transform: translateY(-5px);
+}
+
+.coffeeCard .card-img-top {
+  height: 230px;
+  object-fit: cover;
+}
+
+.coffeeCard .card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.coffeeCard .card-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.coffeeCard p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.coffeePrice {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.coffeeButton {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.coffeeButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.coffeeSearch {
+  max-width: 450px;
+  margin: 0 auto 30px;
+}
+
+.coffeeSearch label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.coffeeSearch input {
+  width: 85%;
+  padding: 12px 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  transition: width 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.coffeeSearch input:focus {
+  width: 100%;
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.coffeeSearchMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Brewing Equipment page */
+/* Equipment catalogue */
+.equipmentSection {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.equipmentHeading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.equipmentHeading h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.equipmentMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.equipmentCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.equipmentCard:hover {
+  transform: translateY(-5px);
+}
+
+.equipmentCard .card-img-top {
+  height: 230px;
+  object-fit: contain;
+  padding: 15px;
+}
+
+.equipmentCard .card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipmentCard .card-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.equipmentCard p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.equipmentPrice {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.equipmentButton {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.equipmentButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Equipment search */
+.equipmentSearch {
+  max-width: 450px;
+  margin: 0 auto 30px;
+}
+
+.equipmentSearch label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.equipmentSearch input {
+  width: 85%;
+  padding: 12px 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  transition: width 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.equipmentSearch input:focus {
+  width: 100%;
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.equipmentSearchMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Events and Workshops page */
+/* Events and workshops */
+.eventsPage {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.eventsHeading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.eventsHeading h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.eventSection {
+  margin-bottom: 50px;
+  scroll-margin-top: 20px;
+}
+
+.eventCard {
+  flex-direction: row;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.eventImage {
+  width: 45%;
+  object-fit: cover;
+}
+
+.eventCard .card-body {
+  padding: 30px;
+}
+
+.eventCard h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.eventCard p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.eventButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.eventButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.eventRegistration {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  scroll-margin-top: 20px;
+}
+
+.eventRegistration h2 {
+  margin-bottom: 15px;
+}
+
+.eventRegistration > p {
+  margin-bottom: 25px;
+}
+
+.registrationRow {
+  display: flex;
+  gap: 20px;
+}
+
+.registrationField {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 20px;
+}
+
+.registrationField label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.registrationField input,
+.registrationField select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+/* Selected Events category */
+.eventsBody .menu .dropdown-item.active {
+  background-color: black;
+  color: white;
+}
+
+/* Shopping Cart page */
+/* Shopping cart */
+.cartSection {
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+.cartSection h1 {
+  margin-bottom: 15px;
+}
+
+.cartSection > p {
+  margin-bottom: 25px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cartItem h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.cartItem p {
+  margin-bottom: 8px;
+}
+
+.cartRemove,
+.cartShopLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cartRemove:hover,
+.cartShopLink:hover {
+  background-color: white;
+  color: black;
+}
+
+.cartTotal {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Checkout preview fields */
+.checkoutField {
+  margin-bottom: 20px;
+}
+
+.checkoutField label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkoutField input,
+.checkoutField textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+/* Cart promo codes */
+.promoForm {
+  margin: 25px 0;
+}
+.promoForm fieldset {
+  min-width: 0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+.promoForm legend {
+  float: none;
+  width: auto;
+  padding: 0 8px;
+  font-size: 20px;
+}
+.promoForm label {
+  display: block;
+  margin-bottom: 8px;
+}
+.promoControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.promoControls input {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+.promoForm [hidden] {
+  display: none !important;
+}
+#promoMessage {
+  margin: 12px 0 0;
+}
+
+/* Offers and Subscriptions page */
+/* Offers and subscriptions */
+.offersPage {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.offersHeading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.offersHeading h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.offersSection {
+  margin-bottom: 50px;
+}
+
+.offersSection > h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.offersSection > p {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.offerCard,
+.subscriptionCard {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.offerCard .card-body,
+.subscriptionCard .card-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offerIcon {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.offerCard h3,
+.subscriptionCard h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.offerCard p,
+.subscriptionCard p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.subscriptionPrice {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.offersButton {
+  display: inline-block;
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.offersButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.subscriptionForm {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  scroll-margin-top: 20px;
+}
+
+.subscriptionForm h2 {
+  margin-bottom: 15px;
+}
+
+.subscriptionForm > p {
+  margin-bottom: 25px;
+}
+
+.subscriptionField {
+  margin-bottom: 20px;
+}
+
+.subscriptionField label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.subscriptionField input,
+.subscriptionField select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Shared styles */
+  /* Navigation */
+  .logo {
+    left: -4px;
+  }
+
+  .brandLogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo a {
+    font-size: 20px;
+  }
+
+  .navBar {
+    gap: 20px;
+  }
+  .navBar .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .navBar .menu.active {
+    display: flex;
+  }
+  .menuToggle {
+    display: block;
+  }
+  .menu li {
+    width: 100%;
+  }
+
+  /* Footer */
+  /* Compact mobile footer */
+  footer {
+    padding: 30px 0 15px;
+  }
+
+  .footerContent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .footerColumn:first-child,
+  .footerColumn:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footerColumn h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .footerColumn p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .footerColumn a {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .footerBottom {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+
+  .footerBottom p {
+    font-size: 12px;
+  }
+
+  /* Home page */
+  /* Slideshow */
+  .homeSlider {
+    height: 350px;
+  }
+  .slideText h1,
+  .slideText h2 {
+    font-size: 28px;
+  }
+  .slideText p {
+    font-size: 16px;
+  }
+
+  /* About */
+  .homeAbout {
+    flex-direction: column;
+    margin: 40px auto;
+    gap: 25px;
+  }
+  .aboutImage,
+  .aboutText {
+    width: 100%;
+  }
+  .aboutImage img {
+    height: 250px;
+  }
+  .aboutText h2,
+  .homeFeatures h2,
+  .homeContact h2,
+  .contactHeading {
+    font-size: 26px;
+  }
+
+  /* Contact */
+  .contactSection {
+    padding: 40px 0;
+  }
+  .homeContact {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contactMap,
+  .contactEnquiry {
+    width: 100%;
+  }
+  .contactMap iframe {
+    height: 300px;
+  }
+
+  /* Coffee Selection page */
+  .coffeeSection .row {
+    --bs-gutter-x: 12px;
+    --bs-gutter-y: 12px;
+  }
+
+  .coffeeSection {
+    margin: 40px auto;
+  }
+
+  .coffeeHeading h1 {
+    font-size: 28px;
+  }
+
+  /* Compact mobile cards */
+  .coffeeCard .card-img-top {
+    height: 130px;
+  }
+
+  .coffeeCard .card-body {
+    padding: 12px;
+  }
+
+  .coffeeCard .card-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .coffeeCard p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .coffeeCard .coffeePrice {
+    font-size: 17px;
+  }
+
+  .coffeeButton {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  /* Brewing Equipment page */
+  .equipmentSection .row {
+    --bs-gutter-x: 12px;
+    --bs-gutter-y: 12px;
+  }
+
+  .equipmentSection {
+    margin: 40px auto;
+  }
+
+  .equipmentHeading h1 {
+    font-size: 28px;
+  }
+
+  /* Compact mobile cards */
+  .equipmentCard .card-img-top {
+    height: 110px;
+    padding: 6px;
+  }
+
+  .equipmentCard .card-body {
+    padding: 10px;
+  }
+
+  .equipmentCard .card-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .equipmentCard p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .equipmentCard .equipmentPrice {
+    font-size: 17px;
+  }
+
+  .equipmentButton {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  /* Events and Workshops page */
+  .eventsPage {
+    margin: 40px auto;
+  }
+
+  .eventsHeading h1 {
+    font-size: 28px;
+  }
+
+  .eventCard {
+    flex-direction: column;
+  }
+
+  .eventImage {
+    width: 100%;
+    height: 230px;
+  }
+
+  .eventCard .card-body {
+    padding: 20px;
+  }
+
+  .registrationRow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .eventRegistration {
+    padding: 20px;
+  }
+
+  /* Shopping Cart page */
+  .cartSection {
+    margin: 40px auto;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  /* Offers and Subscriptions page */
+  .offersPage {
+    margin: 40px auto;
+  }
+
+  .offersHeading h1 {
+    font-size: 28px;
+  }
+
+  .offerCard .card-body,
+  .subscriptionCard .card-body,
+  .subscriptionForm {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Brewing Equipment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="siteNav">
+      <div class="navBar">
+        <div class="logo">
+          <a href="home.html">
+            <img class="brandLogo" src="images/logo.png" alt="" width="42" height="42">
+            Bean Boutique
+          </a>
+        </div>
+        <button class="menuToggle" type="button" onclick="toggleMenu()" aria-controls="navMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <ul class="menu" id="navMenu">
+          <li>
+            <a href="home.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="coffee.html"
+              ><i class="fa-solid fa-mug-hot"></i> Coffee Selection</a
+            >
+          </li>
+          <li>
+            <a href="equipment.html"
+               class="active" aria-current="page"><i class="fa-solid fa-gears"></i> Brewing Equipment</a
+            >
+          </li>
+          <!-- Events dropdown -->
+          <li class="dropdown">
+            <button
+              class="eventsDropdownBtn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-calendar-days"></i> Events and Workshops
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="events.html#upcomingEvents"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#workshops"
+                  >Coffee Workshops</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#lessons"
+                  >Coffee Lessons</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="offers.html"
+              ><i class="fa-solid fa-tags"></i> Offers and Subscriptions</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Cart <span id="cartCount" class="badge rounded-pill text-bg-dark ms-1" hidden></span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Brewing equipment catalogue -->
+    <div class="equipmentSection">
+      <div class="equipmentHeading">
+        <h1>Brewing Equipment</h1>
+        <p>Find tools for your favourite way to brew coffee.</p>
+      </div>
+      <div class="equipmentSearch">
+        <label for="equipmentSearch">Find your equipment</label>
+        <input type="search" id="equipmentSearch" placeholder="Search equipment..." oninput="filterEquipment()">
+      </div>
+      <p id="equipmentSearchMessage" class="equipmentSearchMessage" role="status"></p>
+      <p id="cartMessage" class="equipmentMessage" role="status"></p>
+      <div class="row g-4">
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/images.jpg" alt="Glass French press">
+            <div class="card-body">
+              <h2 class="card-title">French Press</h2>
+              <p>A glass coffee press for everyday brewing.</p>
+              <p><strong>Use:</strong> Add coffee and hot water, steep, then press.</p>
+              <p class="equipmentPrice">฿850</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('French Press', 850)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/pexels-aidin-gheshlaghi-423868104-16645942.jpg" alt="Pour-over coffee brewer">
+            <div class="card-body">
+              <h2 class="card-title">Pour-over Brewer</h2>
+              <p>A brewer for making coffee with a paper filter.</p>
+              <p><strong>Use:</strong> Add a filter and coffee, then slowly pour hot water.</p>
+              <p class="equipmentPrice">฿1,200</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Pour-over Brewer', 1200)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/IMG_0906.jpg" alt="Manual coffee grinder">
+            <div class="card-body">
+              <h2 class="card-title">Hand Grinder</h2>
+              <p>Grind your coffee beans before brewing.</p>
+              <p><strong>Use:</strong> Add beans, choose a grind setting and turn the handle.</p>
+              <p class="equipmentPrice">฿1,500</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Hand Grinder', 1500)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/ses876btrupd8png.jpg" alt="Espresso machine">
+            <div class="card-body">
+              <h2 class="card-title">Espresso Machine</h2>
+              <p>A machine for preparing espresso at home.</p>
+              <p><strong>Use:</strong> Fill and tamp the portafilter, then start brewing.</p>
+              <p class="equipmentPrice">฿25,000</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Espresso Machine', 25000)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/images%20(2).jpg" alt="White gooseneck kettle">
+            <div class="card-body">
+              <h2 class="card-title">Gooseneck Kettle</h2>
+              <p>A narrow-spout kettle for controlled pouring.</p>
+              <p><strong>Use:</strong> Pour heated water slowly over your coffee grounds.</p>
+              <p class="equipmentPrice">฿2,200</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Gooseneck Kettle', 2200)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/images%20(3).jpg" alt="Digital coffee scales">
+            <div class="card-body">
+              <h2 class="card-title">Coffee Scale</h2>
+              <p>Measure your coffee and water while brewing.</p>
+              <p><strong>Use:</strong> Place your container on the scale and reset to zero.</p>
+              <p class="equipmentPrice">฿950</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Coffee Scale', 950)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/61MDp5xGi4L.jpg" alt="Portable espresso maker with carrying case">
+            <div class="card-body">
+              <h2 class="card-title">Portable Espresso Maker</h2>
+              <p>A compact coffee maker to carry with you.</p>
+              <p><strong>Use:</strong> Prepare and brew according to the product instructions.</p>
+              <p class="equipmentPrice">฿4,500</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Portable Espresso Maker', 4500)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/61u3sW4Vx4L.jpg" alt="AeroPress coffee maker">
+            <div class="card-body">
+              <h2 class="card-title">AeroPress</h2>
+              <p>A compact press for brewing individual cups.</p>
+              <p><strong>Use:</strong> Add a filter, coffee and water, then gently press.</p>
+              <p class="equipmentPrice">฿1,800</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('AeroPress', 1800)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/71m07Hq30LL.jpg" alt="Moka pot">
+            <div class="card-body">
+              <h2 class="card-title">Moka Pot</h2>
+              <p>A stovetop brewer for your home coffee routine.</p>
+              <p><strong>Use:</strong> Fill and heat according to the product instructions.</p>
+              <p class="equipmentPrice">฿1,100</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Moka Pot', 1100)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/images%20(4).jpg" alt="Manual lever espresso maker">
+            <div class="card-body">
+              <h2 class="card-title">Flair Espresso Maker</h2>
+              <p>A manual lever brewer for preparing espresso.</p>
+              <p><strong>Use:</strong> Follow the model’s instructions to prepare and press.</p>
+              <p class="equipmentPrice">฿8,500</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Flair Espresso Maker', 8500)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/71TcIGXl+TL._AC_UF894,1000_QL80_.jpg" alt="Coffee tampers and accessory holder">
+            <div class="card-body">
+              <h2 class="card-title">Tamper and Accessory Set</h2>
+              <p>Tools for preparing your espresso and organising accessories.</p>
+              <p><strong>Use:</strong> Use the matching tamper to press grounds evenly.</p>
+              <p class="equipmentPrice">฿1,600</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Tamper and Accessory Set', 1600)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4" data-aos="fade-up">
+          <div class="card equipmentCard h-100">
+            <img class="card-img-top" src="images/equipment/images%20(5).jpg" alt="Dark coffee press with glass cups">
+            <div class="card-body">
+              <h2 class="card-title">Cold Brew Coffee Maker</h2>
+              <p>A sample cold brew product in our equipment range.</p>
+              <p><strong>Use:</strong> Follow the product’s cold brewing instructions.</p>
+              <p class="equipmentPrice">฿900</p>
+              <button type="button" class="equipmentButton" onclick="addToCart('Cold Brew Coffee Maker', 900)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContent">
+        <div class="footerColumn">
+          <h2>About Us</h2>
+          <p>Bean Boutique offers unique coffee beans, brewing equipment, and workshops for coffee lovers.</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Menu</h2>
+          <a href="home.html">Home</a>
+          <a href="coffee.html">Coffee Selection</a>
+          <a href="equipment.html">Brewing Equipment</a>
+          <a href="events.html">Events and Workshops</a>
+          <a href="offers.html">Offers and Subscriptions</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <div class="footerColumn">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 1204/3, Unit B, Song Wat
+            Road, Chakkrawat, Samphanthawong, Bangkok 10100, Thailand
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +66 00 000 0000</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.example</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Opening Hours</h2>
+          <p>Open Every Day</p>
+          <p>Monday-Friday<br>9:00 AM-8:00 PM</p>
+          <p>Saturday-Sunday<br>9:00 AM-9:00 PM</p>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2026 Bean Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/equipment.js"></script>
+  </body>
+</html>

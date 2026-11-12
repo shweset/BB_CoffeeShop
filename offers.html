@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Offers and Subscriptions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="siteNav">
+      <div class="navBar">
+        <div class="logo">
+          <a href="home.html">
+            <img class="brandLogo" src="images/logo.png" alt="" width="42" height="42">
+            Bean Boutique
+          </a>
+        </div>
+        <button class="menuToggle" type="button" onclick="toggleMenu()" aria-controls="navMenu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i> Menu
+        </button>
+        <ul class="menu" id="navMenu">
+          <li>
+            <a href="home.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="coffee.html"
+              ><i class="fa-solid fa-mug-hot"></i> Coffee Selection</a
+            >
+          </li>
+          <li>
+            <a href="equipment.html"
+              ><i class="fa-solid fa-gears"></i> Brewing Equipment</a
+            >
+          </li>
+          <!-- Events dropdown -->
+          <li class="dropdown">
+            <button
+              class="eventsDropdownBtn dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-calendar-days"></i> Events and Workshops
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="events.html#upcomingEvents"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#workshops"
+                  >Coffee Workshops</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="events.html#lessons"
+                  >Coffee Lessons</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="offers.html"
+               class="active" aria-current="page"><i class="fa-solid fa-tags"></i> Offers and Subscriptions</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Cart <span id="cartCount" class="badge rounded-pill text-bg-dark ms-1" hidden></span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Offers and subscriptions -->
+    <div class="offersPage">
+      <div class="offersHeading">
+        <h1>Offers and Subscriptions</h1>
+        <p>Explore our offers or choose a monthly coffee plan.</p>
+      </div>
+
+      <div class="offersSection">
+        <h2>Special Offers</h2>
+        <p>Apply WELCOME10 in your cart.</p>
+        <div class="row g-4">
+          <div class="col-md-6 mx-auto">
+            <div class="card offerCard h-100">
+              <div class="card-body">
+                <i class="fa-solid fa-gift offerIcon"></i>
+                <h3>Welcome Offer</h3>
+                <p>Get 10% off your first order, including coffee and brewing equipment.</p>
+                <p><strong>Code:</strong> WELCOME10</p>
+                <a href="coffee.html" class="offersButton">Explore Coffee</a>
+              </div>
+            </div>
+          </div>
+</div>
+      </div>
+
+      <div class="offersSection">
+        <h2>Monthly Coffee Plans</h2>
+        <p>Choose a plan that suits your coffee routine.</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card subscriptionCard h-100">
+              <div class="card-body">
+                <h3>Starter Plan</h3>
+                <p class="subscriptionPrice">฿320 / month</p>
+                <p>One 250g bag each month.</p>
+                <p>A simple choice for occasional coffee drinkers.</p>
+                <a class="offersButton" href="#subscriptionForm">Enquire About This Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card subscriptionCard h-100">
+              <div class="card-body">
+                <h3>Daily Coffee Plan</h3>
+                <p class="subscriptionPrice">฿600 / month</p>
+                <p>Two 250g bags each month.</p>
+                <p>Enjoy more coffee throughout the month.</p>
+                <a class="offersButton" href="#subscriptionForm">Enquire About This Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card subscriptionCard h-100">
+              <div class="card-body">
+                <h3>Coffee Lovers Plan</h3>
+                <p class="subscriptionPrice">฿1,100 / month</p>
+                <p>Four 250g bags each month.</p>
+                <p>Suitable for sharing coffee with family or friends.</p>
+                <a class="offersButton" href="#subscriptionForm">Enquire About This Plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subscriptionForm" id="subscriptionForm">
+        <h2>Ask About a Subscription</h2>
+        <p>Choose a plan and contact us by email.</p>
+        <form action="mailto:hello@beanboutique.example" method="post" enctype="text/plain">
+          <div class="subscriptionField">
+            <label for="subscriberName">Name</label>
+            <input type="text" id="subscriberName" name="Name" autocomplete="name" required>
+          </div>
+          <div class="subscriptionField">
+            <label for="subscriberEmail">Email</label>
+            <input type="email" id="subscriberEmail" name="Email" autocomplete="email" required>
+          </div>
+          <div class="subscriptionField">
+            <label for="subscriptionPlan">Plan</label>
+            <select id="subscriptionPlan" name="Plan" required>
+              <option value="">Select a plan</option>
+              <option value="Starter Plan">Starter Plan</option>
+              <option value="Daily Coffee Plan">Daily Coffee Plan</option>
+              <option value="Coffee Lovers Plan">Coffee Lovers Plan</option>
+            </select>
+          </div>
+          <button type="submit" class="offersButton">Enquire by Email</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContent">
+        <div class="footerColumn">
+          <h2>About Us</h2>
+          <p>Bean Boutique offers unique coffee beans, brewing equipment, and workshops for coffee lovers.</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Menu</h2>
+          <a href="home.html">Home</a>
+          <a href="coffee.html">Coffee Selection</a>
+          <a href="equipment.html">Brewing Equipment</a>
+          <a href="events.html">Events and Workshops</a>
+          <a href="offers.html">Offers and Subscriptions</a>
+          <a href="cart.html">Shopping Cart</a>
+        </div>
+        <div class="footerColumn">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 1204/3, Unit B, Song Wat
+            Road, Chakkrawat, Samphanthawong, Bangkok 10100, Thailand
+          </p>
+          <p><i class="fa-solid fa-phone"></i> +66 00 000 0000</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.example</p>
+        </div>
+        <div class="footerColumn">
+          <h2>Opening Hours</h2>
+          <p>Open Every Day</p>
+          <p>Monday-Friday<br>9:00 AM-8:00 PM</p>
+          <p>Saturday-Sunday<br>9:00 AM-9:00 PM</p>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <p>&copy; 2026 Bean Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
